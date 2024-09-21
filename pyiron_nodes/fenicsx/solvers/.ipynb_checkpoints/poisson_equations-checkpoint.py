@@ -5,7 +5,7 @@ from typing import Optional
 def linear_poisson_solver(
     function_space,
     load,
-    bcs
+    bcs_array
 ):
     
     from dolfinx.fem.petsc import LinearProblem
@@ -16,6 +16,6 @@ def linear_poisson_solver(
     v = ufl.TestFunction(function_space)
     a = ufl.dot(ufl.grad(u), ufl.grad(v)) * ufl.dx
     L = load * v * ufl.dx
-    problem = LinearProblem(a, L, bcs=bcs, petsc_options={"ksp_type": "preonly", "pc_type": "lu"})
+    problem = LinearProblem(a, L, bcs=bcs_array, petsc_options={"ksp_type": "preonly", "pc_type": "lu"})
     uh = problem.solve()
     return uh
