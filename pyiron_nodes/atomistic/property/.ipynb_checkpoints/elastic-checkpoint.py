@@ -327,7 +327,8 @@ def rotate_elasticity_tensor(
     crystal: Optional[str],
     x_indices: Optional[str|list[int]] = '1 0 0',
     y_indices: Optional[str|list[int]] = '0 1 0',
-    z_indices: Optional[str|list[int]] = '0 0 1'
+    z_indices: Optional[str|list[int]] = '0 0 1',
+    print_tensor: Optional[bool] = True,
 ):
     '''
     Returns the elasticity tensor rotated in given orientation.
@@ -390,6 +391,8 @@ def rotate_elasticity_tensor(
         C_base = np.array([[c11, c12, c12, 0, 0, 0], [c12, c11, c12, 0, 0, 0], [c12, c12, c11, 0, 0, 0], 
                            [0, 0, 0, c44, 0, 0], [0, 0, 0, 0, c44, 0], [0, 0, 0, 0, 0, c44]]) 
     C = np.dot(np.dot(KK, C_base), np.transpose(KK)) # Rotation of the material stiffness tensor
+    if print_tensor==True:
+        print(C)
 
     return C
 
