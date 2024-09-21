@@ -1,0 +1,337 @@
+digraph clustermultiscale_linear_elasticity {
+	color="#dcccc9:#dcccc9" compound=true fillcolor="#dcccc9:#dcccc9" fontname=helvetica gradientangle=0 label="multiscale_linear_elasticity: Workflow" rankdir=LR size="15,15" style=filled
+	subgraph clustermultiscale_linear_elasticityInputs {
+		color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=0 label=Inputs rankdir=TB style=filled
+		clustermultiscale_linear_elasticityInputsrun [label=run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+		clustermultiscale_linear_elasticityInputsaccumulate_and_run [label=accumulate_and_run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+		clustermultiscale_linear_elasticityInputsstructure__name [label="structure__name: str" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsstructure__crystalstructure [label="structure__crystalstructure: Optional" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsstructure__a [label="structure__a: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsstructure__c [label="structure__c: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsstructure__c_over_a [label="structure__c_over_a: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsstructure__u [label="structure__u: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsstructure__orthorhombic [label="structure__orthorhombic: bool" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsstructure__cubic [label="structure__cubic: bool" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputselastic_calc_params__num_of_point [label="elastic_calc_params__num_of_point: int" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputselastic_calc_params__eps_range [label="elastic_calc_params__eps_range: float" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputselastic_calc_params__sqrt_eta [label="elastic_calc_params__sqrt_eta: bool" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputselastic_calc_params__fit_order [label="elastic_calc_params__fit_order: int" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsrotated_elastic_tensor__crystal [label="rotated_elastic_tensor__crystal: Optional" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsrotated_elastic_tensor__x_indices [label="rotated_elastic_tensor__x_indices: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsrotated_elastic_tensor__y_indices [label="rotated_elastic_tensor__y_indices: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsrotated_elastic_tensor__z_indices [label="rotated_elastic_tensor__z_indices: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbar_geom_params__length [label="bar_geom_params__length: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbar_geom_params__width [label="bar_geom_params__width: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbar_geom_params__depth [label="bar_geom_params__depth: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbar_geom_params__density [label="bar_geom_params__density: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbar_domain__x0 [label="bar_domain__x0: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbar_domain__y0 [label="bar_domain__y0: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbar_domain__z0 [label="bar_domain__z0: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbar_domain__min_mesh [label="bar_domain__min_mesh: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbar_domain__max_mesh [label="bar_domain__max_mesh: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsvector_function_space__el_type [label="vector_function_space__el_type: Optional" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsvector_function_space__el_order [label="vector_function_space__el_order: Optional" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbc_left__bc_function [label="bc_left__bc_function: str" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbc_left__value_x [label="bc_left__value_x: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbc_left__value_y [label="bc_left__value_y: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbc_left__value_z [label="bc_left__value_z: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbc_right__bc_function [label="bc_right__bc_function: str" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbc_right__value_x [label="bc_right__value_x: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbc_right__value_y [label="bc_right__value_y: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbc_right__value_z [label="bc_right__value_z: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbc_array__bc3 [label=bc_array__bc3 color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbc_array__bc4 [label=bc_array__bc4 color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbc_array__bc5 [label=bc_array__bc5 color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityInputsbc_array__bc6 [label=bc_array__bc6 color="#EDB22C" fontname=helvetica shape=oval style=filled]
+	}
+	subgraph clustermultiscale_linear_elasticityOutputs {
+		color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=180 label=Outputs rankdir=TB style=filled
+		clustermultiscale_linear_elasticityOutputsran [label=ran color="#21BFD8" fontname=helvetica shape=cds style=filled]
+		clustermultiscale_linear_elasticityOutputsrotated_elastic_tensor__rotated_elast_tensor [label=rotated_elastic_tensor__rotated_elast_tensor color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityOutputsinit_mesh_plotter_obj__plotter [label=init_mesh_plotter_obj__plotter color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		clustermultiscale_linear_elasticityOutputsbc_array__bc_array [label=bc_array__bc_array color="#EDB22C" fontname=helvetica shape=oval style=filled]
+	}
+	clustermultiscale_linear_elasticityInputsrun -> clustermultiscale_linear_elasticityOutputsran [style=invis]
+	subgraph clustermultiscale_linear_elasticityase_emt_engine {
+		color="#bfe2bf:#bfe2bf" compound=true fillcolor="#bfe2bf:#bfe2bf" fontname=helvetica gradientangle=0 label="ase_emt_engine: EMT" rankdir=LR style=filled
+		subgraph clustermultiscale_linear_elasticityase_emt_engineInputs {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=0 label=Inputs rankdir=TB style=filled
+			clustermultiscale_linear_elasticityase_emt_engineInputsrun [label=run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityase_emt_engineInputsaccumulate_and_run [label=accumulate_and_run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+		}
+		subgraph clustermultiscale_linear_elasticityase_emt_engineOutputsWithInjection {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=180 label=OutputsWithInjection rankdir=TB style=filled
+			clustermultiscale_linear_elasticityase_emt_engineOutputsWithInjectionran [label=ran color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityase_emt_engineOutputsWithInjectionengine [label=engine color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		clustermultiscale_linear_elasticityase_emt_engineInputsrun -> clustermultiscale_linear_elasticityase_emt_engineOutputsWithInjectionran [style=invis]
+	}
+	subgraph clustermultiscale_linear_elasticitystructure {
+		color="#bfe2bf:#bfe2bf" compound=true fillcolor="#bfe2bf:#bfe2bf" fontname=helvetica gradientangle=0 label="structure: Bulk" rankdir=LR style=filled
+		subgraph clustermultiscale_linear_elasticitystructureInputs {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=0 label=Inputs rankdir=TB style=filled
+			clustermultiscale_linear_elasticitystructureInputsrun [label=run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitystructureInputsaccumulate_and_run [label=accumulate_and_run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitystructureInputsname [label="name: str" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitystructureInputscrystalstructure [label="crystalstructure: Optional" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitystructureInputsa [label="a: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitystructureInputsc [label="c: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitystructureInputsc_over_a [label="c_over_a: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitystructureInputsu [label="u: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitystructureInputsorthorhombic [label="orthorhombic: bool" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitystructureInputscubic [label="cubic: bool" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		subgraph clustermultiscale_linear_elasticitystructureOutputsWithInjection {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=180 label=OutputsWithInjection rankdir=TB style=filled
+			clustermultiscale_linear_elasticitystructureOutputsWithInjectionran [label=ran color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitystructureOutputsWithInjectionstructure [label=structure color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		clustermultiscale_linear_elasticitystructureInputsrun -> clustermultiscale_linear_elasticitystructureOutputsWithInjectionran [style=invis]
+	}
+	subgraph clustermultiscale_linear_elasticityelastic_calc_params {
+		color="#bbd6e8:#bbd6e8" compound=true fillcolor="#bbd6e8:#bbd6e8" fontname=helvetica gradientangle=0 label="elastic_calc_params: InputElasticTensor" rankdir=LR style=filled
+		subgraph clustermultiscale_linear_elasticityelastic_calc_paramsInputs {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=0 label=Inputs rankdir=TB style=filled
+			clustermultiscale_linear_elasticityelastic_calc_paramsInputsrun [label=run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityelastic_calc_paramsInputsaccumulate_and_run [label=accumulate_and_run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityelastic_calc_paramsInputsnum_of_point [label="num_of_point: int" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticityelastic_calc_paramsInputseps_range [label="eps_range: float" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticityelastic_calc_paramsInputssqrt_eta [label="sqrt_eta: bool" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticityelastic_calc_paramsInputsfit_order [label="fit_order: int" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		subgraph clustermultiscale_linear_elasticityelastic_calc_paramsOutputsWithInjection {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=180 label=OutputsWithInjection rankdir=TB style=filled
+			clustermultiscale_linear_elasticityelastic_calc_paramsOutputsWithInjectionran [label=ran color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityelastic_calc_paramsOutputsWithInjectiondataclass [label="dataclass: InputElasticTensor" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		clustermultiscale_linear_elasticityelastic_calc_paramsInputsrun -> clustermultiscale_linear_elasticityelastic_calc_paramsOutputsWithInjectionran [style=invis]
+	}
+	subgraph clustermultiscale_linear_elasticityelastic_constants {
+		color="#dcccc9:#dcccc9" compound=true fillcolor="#dcccc9:#dcccc9" fontname=helvetica gradientangle=0 label="elastic_constants: ElasticConstants" rankdir=LR style=filled
+		subgraph clustermultiscale_linear_elasticityelastic_constantsInputs {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=0 label=Inputs rankdir=TB style=filled
+			clustermultiscale_linear_elasticityelastic_constantsInputsrun [label=run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityelastic_constantsInputsaccumulate_and_run [label=accumulate_and_run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityelastic_constantsInputsstructure [label=structure color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticityelastic_constantsInputsengine [label="engine: Optional" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticityelastic_constantsInputsparameters [label="parameters: Optional" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		subgraph clustermultiscale_linear_elasticityelastic_constantsOutputsWithInjection {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=180 label=OutputsWithInjection rankdir=TB style=filled
+			clustermultiscale_linear_elasticityelastic_constantsOutputsWithInjectionran [label=ran color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityelastic_constantsOutputsWithInjectionelastic [label="elastic: OutputElasticAnalysis" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		clustermultiscale_linear_elasticityelastic_constantsInputsrun -> clustermultiscale_linear_elasticityelastic_constantsOutputsWithInjectionran [style=invis]
+	}
+	subgraph clustermultiscale_linear_elasticityrotated_elastic_tensor {
+		color="#bfe2bf:#bfe2bf" compound=true fillcolor="#bfe2bf:#bfe2bf" fontname=helvetica gradientangle=0 label="rotated_elastic_tensor: rotate_elasticity_tensor" rankdir=LR style=filled
+		subgraph clustermultiscale_linear_elasticityrotated_elastic_tensorInputs {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=0 label=Inputs rankdir=TB style=filled
+			clustermultiscale_linear_elasticityrotated_elastic_tensorInputsrun [label=run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityrotated_elastic_tensorInputsaccumulate_and_run [label=accumulate_and_run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityrotated_elastic_tensorInputselastic [label=elastic color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticityrotated_elastic_tensorInputscrystal [label="crystal: Optional" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticityrotated_elastic_tensorInputsx_indices [label="x_indices: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticityrotated_elastic_tensorInputsy_indices [label="y_indices: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticityrotated_elastic_tensorInputsz_indices [label="z_indices: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		subgraph clustermultiscale_linear_elasticityrotated_elastic_tensorOutputsWithInjection {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=180 label=OutputsWithInjection rankdir=TB style=filled
+			clustermultiscale_linear_elasticityrotated_elastic_tensorOutputsWithInjectionran [label=ran color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityrotated_elastic_tensorOutputsWithInjectionrotated_elast_tensor [label=rotated_elast_tensor color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		clustermultiscale_linear_elasticityrotated_elastic_tensorInputsrun -> clustermultiscale_linear_elasticityrotated_elastic_tensorOutputsWithInjectionran [style=invis]
+	}
+	subgraph clustermultiscale_linear_elasticitybar_geom_params {
+		color="#bbd6e8:#bbd6e8" compound=true fillcolor="#bbd6e8:#bbd6e8" fontname=helvetica gradientangle=0 label="bar_geom_params: bar_parameters" rankdir=LR style=filled
+		subgraph clustermultiscale_linear_elasticitybar_geom_paramsInputs {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=0 label=Inputs rankdir=TB style=filled
+			clustermultiscale_linear_elasticitybar_geom_paramsInputsrun [label=run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitybar_geom_paramsInputsaccumulate_and_run [label=accumulate_and_run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitybar_geom_paramsInputslength [label="length: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybar_geom_paramsInputswidth [label="width: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybar_geom_paramsInputsdepth [label="depth: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybar_geom_paramsInputsdensity [label="density: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		subgraph clustermultiscale_linear_elasticitybar_geom_paramsOutputsWithInjection {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=180 label=OutputsWithInjection rankdir=TB style=filled
+			clustermultiscale_linear_elasticitybar_geom_paramsOutputsWithInjectionran [label=ran color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitybar_geom_paramsOutputsWithInjectiondataclass [label="dataclass: bar_parameters" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		clustermultiscale_linear_elasticitybar_geom_paramsInputsrun -> clustermultiscale_linear_elasticitybar_geom_paramsOutputsWithInjectionran [style=invis]
+	}
+	subgraph clustermultiscale_linear_elasticitybar_domain {
+		color="#bfe2bf:#bfe2bf" compound=true fillcolor="#bfe2bf:#bfe2bf" fontname=helvetica gradientangle=0 label="bar_domain: create_bar" rankdir=LR style=filled
+		subgraph clustermultiscale_linear_elasticitybar_domainInputs {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=0 label=Inputs rankdir=TB style=filled
+			clustermultiscale_linear_elasticitybar_domainInputsrun [label=run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitybar_domainInputsaccumulate_and_run [label=accumulate_and_run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitybar_domainInputsx0 [label="x0: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybar_domainInputsy0 [label="y0: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybar_domainInputsz0 [label="z0: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybar_domainInputsmin_mesh [label="min_mesh: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybar_domainInputsmax_mesh [label="max_mesh: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybar_domainInputsparameters [label="parameters: Optional" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		subgraph clustermultiscale_linear_elasticitybar_domainOutputsWithInjection {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=180 label=OutputsWithInjection rankdir=TB style=filled
+			clustermultiscale_linear_elasticitybar_domainOutputsWithInjectionran [label=ran color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitybar_domainOutputsWithInjectiondomain [label=domain color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		clustermultiscale_linear_elasticitybar_domainInputsrun -> clustermultiscale_linear_elasticitybar_domainOutputsWithInjectionran [style=invis]
+	}
+	subgraph clustermultiscale_linear_elasticityvector_function_space {
+		color="#bfe2bf:#bfe2bf" compound=true fillcolor="#bfe2bf:#bfe2bf" fontname=helvetica gradientangle=0 label="vector_function_space: create_vector_function_space" rankdir=LR style=filled
+		subgraph clustermultiscale_linear_elasticityvector_function_spaceInputs {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=0 label=Inputs rankdir=TB style=filled
+			clustermultiscale_linear_elasticityvector_function_spaceInputsrun [label=run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityvector_function_spaceInputsaccumulate_and_run [label=accumulate_and_run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityvector_function_spaceInputsdomain [label=domain color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticityvector_function_spaceInputsel_type [label="el_type: Optional" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticityvector_function_spaceInputsel_order [label="el_order: Optional" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		subgraph clustermultiscale_linear_elasticityvector_function_spaceOutputsWithInjection {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=180 label=OutputsWithInjection rankdir=TB style=filled
+			clustermultiscale_linear_elasticityvector_function_spaceOutputsWithInjectionran [label=ran color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityvector_function_spaceOutputsWithInjectionfunction_space [label=function_space color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		clustermultiscale_linear_elasticityvector_function_spaceInputsrun -> clustermultiscale_linear_elasticityvector_function_spaceOutputsWithInjectionran [style=invis]
+	}
+	subgraph clustermultiscale_linear_elasticityinit_mesh_plotter_obj {
+		color="#bfe2bf:#bfe2bf" compound=true fillcolor="#bfe2bf:#bfe2bf" fontname=helvetica gradientangle=0 label="init_mesh_plotter_obj: plot_init_mesh_object" rankdir=LR style=filled
+		subgraph clustermultiscale_linear_elasticityinit_mesh_plotter_objInputs {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=0 label=Inputs rankdir=TB style=filled
+			clustermultiscale_linear_elasticityinit_mesh_plotter_objInputsrun [label=run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityinit_mesh_plotter_objInputsaccumulate_and_run [label=accumulate_and_run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityinit_mesh_plotter_objInputsfunction_space [label=function_space color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		subgraph clustermultiscale_linear_elasticityinit_mesh_plotter_objOutputsWithInjection {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=180 label=OutputsWithInjection rankdir=TB style=filled
+			clustermultiscale_linear_elasticityinit_mesh_plotter_objOutputsWithInjectionran [label=ran color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticityinit_mesh_plotter_objOutputsWithInjectionplotter [label=plotter color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		clustermultiscale_linear_elasticityinit_mesh_plotter_objInputsrun -> clustermultiscale_linear_elasticityinit_mesh_plotter_objOutputsWithInjectionran [style=invis]
+	}
+	subgraph clustermultiscale_linear_elasticitybc_left {
+		color="#bfe2bf:#bfe2bf" compound=true fillcolor="#bfe2bf:#bfe2bf" fontname=helvetica gradientangle=0 label="bc_left: three_d_scalar_dirichlet" rankdir=LR style=filled
+		subgraph clustermultiscale_linear_elasticitybc_leftInputs {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=0 label=Inputs rankdir=TB style=filled
+			clustermultiscale_linear_elasticitybc_leftInputsrun [label=run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitybc_leftInputsaccumulate_and_run [label=accumulate_and_run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitybc_leftInputsfunction_space [label=function_space color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybc_leftInputsbc_function [label="bc_function: str" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybc_leftInputsvalue_x [label="value_x: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybc_leftInputsvalue_y [label="value_y: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybc_leftInputsvalue_z [label="value_z: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		subgraph clustermultiscale_linear_elasticitybc_leftOutputsWithInjection {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=180 label=OutputsWithInjection rankdir=TB style=filled
+			clustermultiscale_linear_elasticitybc_leftOutputsWithInjectionran [label=ran color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitybc_leftOutputsWithInjectionbc [label=bc color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		clustermultiscale_linear_elasticitybc_leftInputsrun -> clustermultiscale_linear_elasticitybc_leftOutputsWithInjectionran [style=invis]
+	}
+	subgraph clustermultiscale_linear_elasticitybc_right {
+		color="#bfe2bf:#bfe2bf" compound=true fillcolor="#bfe2bf:#bfe2bf" fontname=helvetica gradientangle=0 label="bc_right: three_d_scalar_dirichlet" rankdir=LR style=filled
+		subgraph clustermultiscale_linear_elasticitybc_rightInputs {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=0 label=Inputs rankdir=TB style=filled
+			clustermultiscale_linear_elasticitybc_rightInputsrun [label=run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitybc_rightInputsaccumulate_and_run [label=accumulate_and_run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitybc_rightInputsfunction_space [label=function_space color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybc_rightInputsbc_function [label="bc_function: str" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybc_rightInputsvalue_x [label="value_x: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybc_rightInputsvalue_y [label="value_y: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybc_rightInputsvalue_z [label="value_z: Union" color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		subgraph clustermultiscale_linear_elasticitybc_rightOutputsWithInjection {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=180 label=OutputsWithInjection rankdir=TB style=filled
+			clustermultiscale_linear_elasticitybc_rightOutputsWithInjectionran [label=ran color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitybc_rightOutputsWithInjectionbc [label=bc color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		clustermultiscale_linear_elasticitybc_rightInputsrun -> clustermultiscale_linear_elasticitybc_rightOutputsWithInjectionran [style=invis]
+	}
+	subgraph clustermultiscale_linear_elasticitybc_array {
+		color="#bfe2bf:#bfe2bf" compound=true fillcolor="#bfe2bf:#bfe2bf" fontname=helvetica gradientangle=0 label="bc_array: collect_bcs" rankdir=LR style=filled
+		subgraph clustermultiscale_linear_elasticitybc_arrayInputs {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=0 label=Inputs rankdir=TB style=filled
+			clustermultiscale_linear_elasticitybc_arrayInputsrun [label=run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitybc_arrayInputsaccumulate_and_run [label=accumulate_and_run color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitybc_arrayInputsbc1 [label=bc1 color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybc_arrayInputsbc2 [label=bc2 color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybc_arrayInputsbc3 [label=bc3 color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybc_arrayInputsbc4 [label=bc4 color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybc_arrayInputsbc5 [label=bc5 color="#EDB22C" fontname=helvetica shape=oval style=filled]
+			clustermultiscale_linear_elasticitybc_arrayInputsbc6 [label=bc6 color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		subgraph clustermultiscale_linear_elasticitybc_arrayOutputsWithInjection {
+			color="#A5A4A5:#e4e3e4" compound=true fillcolor="#A5A4A5:#e4e3e4" fontname=helvetica gradientangle=180 label=OutputsWithInjection rankdir=TB style=filled
+			clustermultiscale_linear_elasticitybc_arrayOutputsWithInjectionran [label=ran color="#21BFD8" fontname=helvetica shape=cds style=filled]
+			clustermultiscale_linear_elasticitybc_arrayOutputsWithInjectionbc_array [label=bc_array color="#EDB22C" fontname=helvetica shape=oval style=filled]
+		}
+		clustermultiscale_linear_elasticitybc_arrayInputsrun -> clustermultiscale_linear_elasticitybc_arrayOutputsWithInjectionran [style=invis]
+	}
+	clustermultiscale_linear_elasticityase_emt_engineOutputsWithInjectionran -> clustermultiscale_linear_elasticityelastic_constantsInputsaccumulate_and_run [color="#21BFD8;0.5:#21BFD8;0.5"]
+	clustermultiscale_linear_elasticityase_emt_engineOutputsWithInjectionengine -> clustermultiscale_linear_elasticityelastic_constantsInputsengine [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticitystructureOutputsWithInjectionran -> clustermultiscale_linear_elasticityelastic_constantsInputsaccumulate_and_run [color="#21BFD8;0.5:#21BFD8;0.5"]
+	clustermultiscale_linear_elasticitystructureOutputsWithInjectionstructure -> clustermultiscale_linear_elasticityelastic_constantsInputsstructure [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityelastic_calc_paramsOutputsWithInjectionran -> clustermultiscale_linear_elasticityelastic_constantsInputsaccumulate_and_run [color="#21BFD8;0.5:#21BFD8;0.5"]
+	clustermultiscale_linear_elasticityelastic_calc_paramsOutputsWithInjectiondataclass -> clustermultiscale_linear_elasticityelastic_constantsInputsparameters [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityelastic_constantsOutputsWithInjectionran -> clustermultiscale_linear_elasticityrotated_elastic_tensorInputsaccumulate_and_run [color="#21BFD8;0.5:#21BFD8;0.5"]
+	clustermultiscale_linear_elasticityelastic_constantsOutputsWithInjectionelastic -> clustermultiscale_linear_elasticityrotated_elastic_tensorInputselastic [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticitybar_geom_paramsOutputsWithInjectionran -> clustermultiscale_linear_elasticitybar_domainInputsaccumulate_and_run [color="#21BFD8;0.5:#21BFD8;0.5"]
+	clustermultiscale_linear_elasticitybar_geom_paramsOutputsWithInjectiondataclass -> clustermultiscale_linear_elasticitybar_domainInputsparameters [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticitybar_domainOutputsWithInjectionran -> clustermultiscale_linear_elasticityvector_function_spaceInputsaccumulate_and_run [color="#21BFD8;0.5:#21BFD8;0.5"]
+	clustermultiscale_linear_elasticitybar_domainOutputsWithInjectiondomain -> clustermultiscale_linear_elasticityvector_function_spaceInputsdomain [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityvector_function_spaceOutputsWithInjectionran -> clustermultiscale_linear_elasticityinit_mesh_plotter_objInputsaccumulate_and_run [color="#21BFD8;0.5:#21BFD8;0.5"]
+	clustermultiscale_linear_elasticityvector_function_spaceOutputsWithInjectionran -> clustermultiscale_linear_elasticitybc_leftInputsaccumulate_and_run [color="#21BFD8;0.5:#21BFD8;0.5"]
+	clustermultiscale_linear_elasticityvector_function_spaceOutputsWithInjectionran -> clustermultiscale_linear_elasticitybc_rightInputsaccumulate_and_run [color="#21BFD8;0.5:#21BFD8;0.5"]
+	clustermultiscale_linear_elasticityvector_function_spaceOutputsWithInjectionfunction_space -> clustermultiscale_linear_elasticityinit_mesh_plotter_objInputsfunction_space [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityvector_function_spaceOutputsWithInjectionfunction_space -> clustermultiscale_linear_elasticitybc_leftInputsfunction_space [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityvector_function_spaceOutputsWithInjectionfunction_space -> clustermultiscale_linear_elasticitybc_rightInputsfunction_space [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticitybc_leftOutputsWithInjectionran -> clustermultiscale_linear_elasticitybc_arrayInputsaccumulate_and_run [color="#21BFD8;0.5:#21BFD8;0.5"]
+	clustermultiscale_linear_elasticitybc_leftOutputsWithInjectionbc -> clustermultiscale_linear_elasticitybc_arrayInputsbc1 [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticitybc_rightOutputsWithInjectionran -> clustermultiscale_linear_elasticitybc_arrayInputsaccumulate_and_run [color="#21BFD8;0.5:#21BFD8;0.5"]
+	clustermultiscale_linear_elasticitybc_rightOutputsWithInjectionbc -> clustermultiscale_linear_elasticitybc_arrayInputsbc2 [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsstructure__name -> clustermultiscale_linear_elasticitystructureInputsname [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsstructure__crystalstructure -> clustermultiscale_linear_elasticitystructureInputscrystalstructure [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsstructure__a -> clustermultiscale_linear_elasticitystructureInputsa [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsstructure__c -> clustermultiscale_linear_elasticitystructureInputsc [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsstructure__c_over_a -> clustermultiscale_linear_elasticitystructureInputsc_over_a [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsstructure__u -> clustermultiscale_linear_elasticitystructureInputsu [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsstructure__orthorhombic -> clustermultiscale_linear_elasticitystructureInputsorthorhombic [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsstructure__cubic -> clustermultiscale_linear_elasticitystructureInputscubic [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputselastic_calc_params__num_of_point -> clustermultiscale_linear_elasticityelastic_calc_paramsInputsnum_of_point [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputselastic_calc_params__eps_range -> clustermultiscale_linear_elasticityelastic_calc_paramsInputseps_range [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputselastic_calc_params__sqrt_eta -> clustermultiscale_linear_elasticityelastic_calc_paramsInputssqrt_eta [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputselastic_calc_params__fit_order -> clustermultiscale_linear_elasticityelastic_calc_paramsInputsfit_order [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsrotated_elastic_tensor__crystal -> clustermultiscale_linear_elasticityrotated_elastic_tensorInputscrystal [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsrotated_elastic_tensor__x_indices -> clustermultiscale_linear_elasticityrotated_elastic_tensorInputsx_indices [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsrotated_elastic_tensor__y_indices -> clustermultiscale_linear_elasticityrotated_elastic_tensorInputsy_indices [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsrotated_elastic_tensor__z_indices -> clustermultiscale_linear_elasticityrotated_elastic_tensorInputsz_indices [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbar_geom_params__length -> clustermultiscale_linear_elasticitybar_geom_paramsInputslength [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbar_geom_params__width -> clustermultiscale_linear_elasticitybar_geom_paramsInputswidth [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbar_geom_params__depth -> clustermultiscale_linear_elasticitybar_geom_paramsInputsdepth [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbar_geom_params__density -> clustermultiscale_linear_elasticitybar_geom_paramsInputsdensity [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbar_domain__x0 -> clustermultiscale_linear_elasticitybar_domainInputsx0 [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbar_domain__y0 -> clustermultiscale_linear_elasticitybar_domainInputsy0 [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbar_domain__z0 -> clustermultiscale_linear_elasticitybar_domainInputsz0 [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbar_domain__min_mesh -> clustermultiscale_linear_elasticitybar_domainInputsmin_mesh [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbar_domain__max_mesh -> clustermultiscale_linear_elasticitybar_domainInputsmax_mesh [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsvector_function_space__el_type -> clustermultiscale_linear_elasticityvector_function_spaceInputsel_type [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsvector_function_space__el_order -> clustermultiscale_linear_elasticityvector_function_spaceInputsel_order [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbc_left__bc_function -> clustermultiscale_linear_elasticitybc_leftInputsbc_function [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbc_left__value_x -> clustermultiscale_linear_elasticitybc_leftInputsvalue_x [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbc_left__value_y -> clustermultiscale_linear_elasticitybc_leftInputsvalue_y [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbc_left__value_z -> clustermultiscale_linear_elasticitybc_leftInputsvalue_z [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbc_right__bc_function -> clustermultiscale_linear_elasticitybc_rightInputsbc_function [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbc_right__value_x -> clustermultiscale_linear_elasticitybc_rightInputsvalue_x [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbc_right__value_y -> clustermultiscale_linear_elasticitybc_rightInputsvalue_y [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbc_right__value_z -> clustermultiscale_linear_elasticitybc_rightInputsvalue_z [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbc_array__bc3 -> clustermultiscale_linear_elasticitybc_arrayInputsbc3 [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbc_array__bc4 -> clustermultiscale_linear_elasticitybc_arrayInputsbc4 [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbc_array__bc5 -> clustermultiscale_linear_elasticitybc_arrayInputsbc5 [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityInputsbc_array__bc6 -> clustermultiscale_linear_elasticitybc_arrayInputsbc6 [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityrotated_elastic_tensorOutputsWithInjectionrotated_elast_tensor -> clustermultiscale_linear_elasticityOutputsrotated_elastic_tensor__rotated_elast_tensor [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticityinit_mesh_plotter_objOutputsWithInjectionplotter -> clustermultiscale_linear_elasticityOutputsinit_mesh_plotter_obj__plotter [color="#EDB22C;0.5:#EDB22C;0.5"]
+	clustermultiscale_linear_elasticitybc_arrayOutputsWithInjectionbc_array -> clustermultiscale_linear_elasticityOutputsbc_array__bc_array [color="#EDB22C;0.5:#EDB22C;0.5"]
+}
