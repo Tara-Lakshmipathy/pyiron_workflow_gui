@@ -9,7 +9,7 @@ def beta_R0_function(
     expression: Optional[str] = "ufl.exp(-beta**2 * (x[0]**2 + (x[1] - R0)**2))",
     factor: Optional[float|int] = 4,
 ):
-    from dolfinx import mesh, fem, plot, io, default_scalar_type
+    from dolfinx import fem, default_scalar_type
     import ufl
     import numpy as np
     

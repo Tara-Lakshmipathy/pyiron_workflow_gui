@@ -7,8 +7,7 @@ def poisson_load_deflection_plot(
     solution_vector, 
     load
 ):
-    from dolfinx import mesh, fem, plot, io, default_scalar_type
-    import ufl
+    from dolfinx import fem
     import numpy as np
     import matplotlib.pyplot as plt
     from dolfinx import geometry

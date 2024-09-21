@@ -6,7 +6,6 @@ def plot_init_mesh_object(function_space):
     import pyvista
     from dolfinx.plot import vtk_mesh
     from dolfinx import mesh, fem, plot, io, default_scalar_type
-    from IPython.display import Image, display
     
     pyvista.start_xvfb()
 
@@ -19,11 +18,10 @@ def plot_init_mesh_object(function_space):
     return plotter
 
 @as_function_node("plotter")
-def plot_deformed_mesh_object(function_space, solution_vector, factor: Optional[float | int]):
+def plot_one_d_deformed_mesh_object(function_space, solution_vector, factor: Optional[float | int]):
     import pyvista
     from dolfinx.plot import vtk_mesh
-    from dolfinx import mesh, fem, plot, io, default_scalar_type
-    from IPython.display import Image, display
+    from dolfinx import fem, default_scalar_type
     
     pyvista.start_xvfb()
 

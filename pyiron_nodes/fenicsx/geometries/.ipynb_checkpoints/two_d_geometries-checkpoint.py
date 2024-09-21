@@ -12,9 +12,7 @@ def create_disk(
     max_mesh: Optional[float|int]
 ):
 
-    from dolfinx import mesh, fem, plot, io, default_scalar_type
     from mpi4py import MPI
-    import numpy as np
     from dolfinx.io import gmshio
     import gmsh
 

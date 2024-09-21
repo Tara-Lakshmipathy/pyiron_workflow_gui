@@ -29,9 +29,7 @@ def create_bar(
     parameters: Optional[bar_parameters.dataclass] = bar_parameters.dataclass(),
 ):
     
-    from dolfinx import mesh, fem, plot, io, default_scalar_type
     from mpi4py import MPI
-    import numpy as np
     from dolfinx.io import gmshio
     import gmsh
 

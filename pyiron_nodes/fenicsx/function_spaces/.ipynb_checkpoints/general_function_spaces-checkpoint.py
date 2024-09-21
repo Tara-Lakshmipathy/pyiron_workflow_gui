@@ -7,7 +7,7 @@ def create_function_space(
     el_type: Optional[str],
     el_order: Optional[int],
 ):
-    from dolfinx import mesh, fem, plot, io, default_scalar_type
+    from dolfinx import fem
 
     V = fem.functionspace(domain, (el_type, el_order))
     return V
@@ -18,7 +18,7 @@ def create_vector_function_space(
     el_type: Optional[str],
     el_order: Optional[int],
 ):
-    from dolfinx import mesh, fem, plot, io, default_scalar_type
+    from dolfinx import fem
 
     V = fem.functionspace(domain, (el_type, el_order, (3,)))
     return V
