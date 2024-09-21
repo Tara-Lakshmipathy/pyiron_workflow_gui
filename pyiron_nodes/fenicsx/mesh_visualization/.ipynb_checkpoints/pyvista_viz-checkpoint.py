@@ -49,7 +49,7 @@ def three_d_sigma(u, C):
 
 @as_function_node("plotter")
 def plot_three_d_vonMises_object(domain, function_space, solution_vector, elasticity_tensor, 
-                                 warp_factor: Optional[float | int], show_undeformed: Optional[bool] = False
+                                 warp_factor: Optional[float | int],
                                 ):
     import pyvista
     from dolfinx.plot import vtk_mesh
@@ -63,8 +63,6 @@ def plot_three_d_vonMises_object(domain, function_space, solution_vector, elasti
     grid = pyvista.UnstructuredGrid(topology, cell_types, geometry)
 
     grid["u"] = solution_vector.x.array.reshape((geometry.shape[0], 3))
-    if show_undeformed==True:
-        actor_0 = p.add_mesh(grid, style="wireframe", color="k")
         
     warped = grid.warp_by_vector("u", factor=warp_factor)
     actor_1 = p.add_mesh(warped, show_edges=True)
