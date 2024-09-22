@@ -166,7 +166,7 @@ const render = createRender(() => {
  
 
   return (    
-    <div style={{ position: "relative", height: "625px", width: "100%" }}>
+    <div style={{ position: "relative", height: "800px", width: "100%" }}>
       <UpdateDataContext.Provider value={updateData}> 
         <ReactFlow 
             nodes={nodes} 
