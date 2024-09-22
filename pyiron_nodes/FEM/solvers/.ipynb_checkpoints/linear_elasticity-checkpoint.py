@@ -25,7 +25,7 @@ def BodyForceVectorBar(
     body_force_y,
     body_force_z,
     gravity_factor,
-    weight_params: Optional[bar_parameters.dataclass] = bar_parameters.dataclass(),
+    weight_params: Optional[BarParameters.dataclass] = BarParameters.dataclass(),
 ):
 
     from dolfinx import fem, default_scalar_type
