@@ -346,7 +346,7 @@ class Function(StaticNode, ScrapesIO, ABC):
     @property
     def gui_color(self) -> str:
         """For drawing the graph"""
-        return SeabornColors.light_green
+        return "#a2ea9f"
 
     @classmethod
     def _extra_info(cls) -> str:

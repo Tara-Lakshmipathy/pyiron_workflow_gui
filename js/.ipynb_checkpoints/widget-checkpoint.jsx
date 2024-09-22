@@ -19,7 +19,9 @@ import CustomNode from './CustomNode.jsx';
 import './text-updater-node.css';
 
 const rfStyle = {
-  backgroundColor: '#c1d6fe',
+  //backgroundColor: '#12033f',
+  //backgroundColor: '#b3cbff',
+  backgroundColor: '#ebf1fc',
 };
 
 export const UpdateDataContext = createContext(null);
@@ -168,7 +170,7 @@ const render = createRender(() => {
       <UpdateDataContext.Provider value={updateData}> 
         <ReactFlow 
             nodes={nodes} 
-            edges={edges.map((edge) => ({ ...edge, style: { stroke: 'black' } }))} // Add this line
+            edges={edges.map((edge) => ({ ...edge, style: { stroke: 'black', 'strokeWidth': 1 } }))} // Add this line
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
             onConnect={onConnect}

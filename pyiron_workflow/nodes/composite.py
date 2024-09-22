@@ -398,7 +398,7 @@ class Composite(SemanticParent, HasCreator, Node, ABC):
     @property
     def gui_color(self) -> str:
         """For drawing the graph"""
-        return SeabornColors.light_orange
+        return "#eacf9f"
 
     @property
     def graph_as_dict(self) -> dict:

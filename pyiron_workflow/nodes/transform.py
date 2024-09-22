@@ -32,7 +32,7 @@ class Transformer(StaticNode, ABC):
     @property
     def gui_color(self) -> str:
         """For drawing the graph"""
-        return SeabornColors.light_violet
+        return "#cb9fea"
 
 
 class FromManyInputs(Transformer, ABC):

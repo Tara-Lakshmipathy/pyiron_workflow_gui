@@ -175,7 +175,7 @@ def get_edges(wf):
         edge_dict["target"] = inp_node
         edge_dict["targetHandle"] = inp_port
         edge_dict["id"] = ic
-        edge_dict["style"] = {'strokeWidth': 1, 'stroke': '#000000',}
+        edge_dict["style"] = {'strokeWidth': 2, 'stroke': 'black',}
 
         edges.append(edge_dict)
     return edges
