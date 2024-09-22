@@ -322,7 +322,7 @@ def subjob_name(i, eps):
 
 
 @as_function_node("rotated_elast_tensor")
-def rotate_elasticity_tensor(
+def RotateElasticityTensor(
     elastic,
     crystal: Optional[str],
     x_indices: Optional[str|list[int]] = '1 0 0',
