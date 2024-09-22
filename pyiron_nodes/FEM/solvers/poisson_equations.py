@@ -2,7 +2,7 @@ from pyiron_workflow import as_function_node
 from typing import Optional
 
 @as_function_node("solution_vector")
-def linear_poisson_solver(
+def LinearPoissonSolver(
     function_space,
     load,
     bcs_array

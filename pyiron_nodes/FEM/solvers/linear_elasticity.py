@@ -1,13 +1,13 @@
 from pyiron_workflow import as_function_node, as_macro_node
 from typing import Optional
-from pyiron_nodes.fenicsx.geometries.three_d_geometries import bar_parameters
+from pyiron_nodes.FEM.geometries.three_d_geometries import BarParameters
 from pyiron_nodes.dev_tools import wf_data_class
 from pyiron_workflow import as_dataclass_node
 from dataclasses import field
 import ufl
 
 @as_function_node("traction_vector")
-def three_d_traction_vector(
+def TractionVector3D(
     domain,
     traction_x,
     traction_y,
@@ -19,7 +19,7 @@ def three_d_traction_vector(
     return T
 
 @as_function_node("body_force_vector")
-def body_force_vector_bar(
+def BodyForceVectorBar(
     domain,
     body_force_x,
     body_force_y,
@@ -47,7 +47,7 @@ def three_d_sigma(u, C):
     return three_d_voigt_stress(ufl.dot(C, three_d_strain_voigt(epsilon(u))))
 
 @as_function_node("solution_vector")
-def linear_elasticity_solver(
+def LinearElasticitySolver(
     function_space,
     domain,
     bcs_array,
@@ -73,7 +73,7 @@ def linear_elasticity_solver(
     return uh
 
 @as_macro_node("solution_vector")
-def macro_three_d_linear_elasticity(
+def LinearElasticity3D(
     self,
     domain,
     function_space,
@@ -86,27 +86,27 @@ def macro_three_d_linear_elasticity(
     body_force_z: Optional[float|int],
     gravity_factor: Optional[float|int],
     elasticity_tensor,
-    parameters: Optional[bar_parameters.dataclass] = bar_parameters.dataclass()
+    parameters: Optional[BarParameters.dataclass] = BarParameters.dataclass()
 ):
 
-    self.T = three_d_traction_vector(domain=domain,
-                                     traction_x=traction_x,
-                                     traction_y=traction_y,
-                                     traction_z=traction_z
+    self.T = TractionVector3D(domain=domain,
+                              traction_x=traction_x,
+                              traction_y=traction_y,
+                              traction_z=traction_z
+                             )
+    self.f = BodyForceVectorBar(domain=domain,
+                                body_force_x=body_force_x,
+                                body_force_y=body_force_y,
+                                body_force_z=body_force_z,
+                                gravity_factor=gravity_factor,
+                                weight_params=parameters
+                               )
+    self.uh = LinearElasticitySolver(domain=domain,
+                                     function_space=function_space,
+                                     bcs_array=bcs_array,
+                                     traction_vector=self.T,
+                                     body_force_vector=self.f,
+                                     elasticity_tensor=elasticity_tensor
                                     )
-    self.f = body_force_vector_bar(domain=domain,
-                                   body_force_x=body_force_x,
-                                   body_force_y=body_force_y,
-                                   body_force_z=body_force_z,
-                                   gravity_factor=gravity_factor,
-                                   weight_params=parameters
-                                  )
-    self.uh = linear_elasticity_solver(domain=domain,
-                                       function_space=function_space,
-                                       bcs_array=bcs_array,
-                                       traction_vector=self.T,
-                                       body_force_vector=self.f,
-                                       elasticity_tensor=elasticity_tensor
-                                      )
     return self.uh
 

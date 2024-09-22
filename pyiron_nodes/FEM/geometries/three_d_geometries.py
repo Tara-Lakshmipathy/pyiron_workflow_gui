@@ -26,7 +26,7 @@ def Bar(
     z0: Optional[float|int],
     min_mesh: Optional[float|int],
     max_mesh: Optional[float|int],
-    parameters: Optional[bar_parameters.dataclass] = bar_parameters.dataclass(),
+    parameters: Optional[BarParameters.dataclass] = BarParameters.dataclass(),
 ):
     
     from mpi4py import MPI
