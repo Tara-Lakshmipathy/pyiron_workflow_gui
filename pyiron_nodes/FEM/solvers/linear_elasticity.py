@@ -89,24 +89,11 @@ def LinearElasticity3D(
     parameters: Optional[BarParameters.dataclass] = BarParameters.dataclass()
 ):
 
-    self.T = TractionVector3D(domain=domain,
-                              traction_x=traction_x,
-                              traction_y=traction_y,
-                              traction_z=traction_z
-                             )
-    self.f = BodyForceVectorBar(domain=domain,
-                                body_force_x=body_force_x,
-                                body_force_y=body_force_y,
-                                body_force_z=body_force_z,
-                                gravity_factor=gravity_factor,
-                                weight_params=parameters
-                               )
-    self.uh = LinearElasticitySolver(domain=domain,
-                                     function_space=function_space,
-                                     bcs_array=bcs_array,
-                                     traction_vector=self.T,
-                                     body_force_vector=self.f,
-                                     elasticity_tensor=elasticity_tensor
-                                    )
+    self.T = TractionVector3D(domain=domain, traction_x=traction_x, traction_y=traction_y, traction_z=traction_z)
+    
+    self.f = BodyForceVectorBar(domain=domain, body_force_x=body_force_x, body_force_y=body_force_y, body_force_z=body_force_z, gravity_factor=gravity_factor, weight_params=parameters)
+    
+    self.uh = LinearElasticitySolver(domain=domain, function_space=function_space, bcs_array=bcs_array, traction_vector=self.T, body_force_vector=self.f, elasticity_tensor=elasticity_tensor)
+    
     return self.uh
 
