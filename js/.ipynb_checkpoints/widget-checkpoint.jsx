@@ -21,8 +21,8 @@ import './text-updater-node.css';
 const rfStyle = {
   //backgroundColor: '#12033f',
   //backgroundColor: '#b3cbff',
-  //backgroundColor: '#dce1ea',
-  backgroundColor: 'white',
+  backgroundColor: '#dce1ea',
+  //backgroundColor: 'white',
 };
 
 export const UpdateDataContext = createContext(null);
