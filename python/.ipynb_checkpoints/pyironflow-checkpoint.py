@@ -48,7 +48,8 @@ class PyironFlow:
         w = self.wf_widgets[index]
 
         if out_flow is None:
-            out_flow = widgets.Output(layout={'border': '1px solid black', 'width': '1650px', 'height': '802px'})
+            out_flow = widgets.Output(layout={'border': '1px solid black', 'width': '1200px', 'height': '802px'})
+            #out_flow = widgets.Output(layout={'border': '1px solid black', 'width': '1650px', 'height': '802px'})
 
         with out_flow:
             display(w.gui)
