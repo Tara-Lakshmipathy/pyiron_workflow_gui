@@ -6,7 +6,7 @@ from typing import Optional
 
 
 @as_function_node('plot')
-def ase2ovito_viz(ase_atoms: _ase.Atoms):
+def Ase2OvitoViz(ase_atoms: _ase.Atoms):
     """Visualize ase.Atoms with ovito widget"""
     from ovito.pipeline import StaticSource, Pipeline
     from ovito.io.ase import ase_to_ovito
@@ -51,46 +51,3 @@ def Ase2OvitoTachyonRenderPersp(
     pipeline.remove_from_scene()
     from IPython.display import Image, display
     return display(Image(filename='temp_viz.png', width=300))
-    
-
-@as_function_node('plot')
-def viz_ovito(pipeline, 
-              layout: Optional[_ipywidgets.Layout] =None
-             ):
-    """Visualize ovito pipeline with a ovito widget"""
-    from ovito.vis import Viewport
-    from ipywidgets import Layout
-    layout = layout or Layout(width='100%')
-    pipeline.add_to_scene()
-    vp = Viewport()
-    return vp.create_jupyter_widget(layout=layout)
-
-@as_function_node('plot')
-def ase_view(atoms: _ase.Atoms):
-    """Visualize ase.Atoms """
-    from ase.visualize import view
-    return view(atoms, viewer='ngl')
-
-@as_function_node('plot')
-def plot3d(structure: _ase.Atoms,
-           particle_size: Optional[int|float] = 1,
-           #show_cell: bool = True,
-           #show_axes: bool = True,
-           camera: str = 'orthographic',
-           color_scheme: str = 'element',
-           distance_from_camera: Optional[int|float] = 100.0,
-           #spacefill: Optional[bool] = True,
-           select_atoms: Optional[_numpy.ndarray] = None,
-          ):
-    """Visualize ase.Atoms using nglview"""
-    from structuretoolkit import plot3d
-    return plot3d(structure=structure, 
-                  particle_size=particle_size, 
-                  #show_cell=show_cell,
-                  #show_axes=show_axes,
-                  camera=camera,
-                  color_scheme = color_scheme,
-                  #spacefill=spacefill,
-                  select_atoms=select_atoms,
-                  distance_from_camera = distance_from_camera
-                 )
