@@ -4,6 +4,17 @@ from python.reactflow import PyironFlowWidget
 from IPython.display import display
 from pyiron_workflow import Workflow
 
+__author__ = "Joerg Neugebauer"
+__copyright__ = (
+    "Copyright 2024, Max-Planck-Institut for Sustainable Materials GmbH - "
+    "Computational Materials Design (CM) Department"
+)
+__version__ = "0.2"
+__maintainer__ = ""
+__email__ = ""
+__status__ = "development"
+__date__ = "Aug 1, 2024"
+
 
 class PyironFlow:
     def __init__(self, wf_list=None):
@@ -49,7 +60,6 @@ class PyironFlow:
 
         if out_flow is None:
             out_flow = widgets.Output(layout={'border': '1px solid black', 'width': '1200px', 'height': '802px'})
-            #out_flow = widgets.Output(layout={'border': '1px solid black', 'width': '1650px', 'height': '802px'})
 
         with out_flow:
             display(w.gui)

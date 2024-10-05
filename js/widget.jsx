@@ -18,9 +18,19 @@ import CustomNode from './CustomNode.jsx';
 
 import './text-updater-node.css';
 
+/**
+ * Author: Joerg Neugebauer
+ * Copyright: Copyright 2024, Max-Planck-Institut for Sustainable Materials GmbH - Computational Materials Design (CM) Department
+ * Version: 0.2
+ * Maintainer: 
+ * Email: 
+ * Status: development 
+ * Date: Aug 1, 2024
+ */
+
+
 const rfStyle = {
-  //backgroundColor: '#12033f',
-  //backgroundColor: '#b3cbff',
+  //backgroundColor: '#B8CEFF',
   backgroundColor: '#dce1ea',
   //backgroundColor: 'white',
 };
@@ -35,7 +45,7 @@ const render = createRender(() => {
   const model = useModel();
   // console.log("model: ", model);
   const initialNodes = JSON.parse(model.get("nodes")) 
-  const initialEdges = JSON.parse(model.get("edges"))
+  const initialEdges = JSON.parse(model.get("edges"))    
 
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges); 
@@ -171,7 +181,7 @@ const render = createRender(() => {
       <UpdateDataContext.Provider value={updateData}> 
         <ReactFlow 
             nodes={nodes} 
-            edges={edges.map((edge) => ({ ...edge, style: { stroke: 'black', 'strokeWidth': 1 } }))} // Add this line
+            edges={edges.map((edge) => ({ ...edge, style: { stroke: 'black', 'strokeWidth': 1 } }))}
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
             onConnect={onConnect}
